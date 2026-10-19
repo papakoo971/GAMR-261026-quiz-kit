@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import OnePunchQuiz from './games/OnePunchQuiz.jsx';
 import MarioQuiz from './games/MarioQuiz.jsx';
 import BattleQuiz from './games/BattleQuiz.jsx';
@@ -15,9 +15,16 @@ const readHash = () => window.location.hash.replace('#', '');
 
 export default function App() {
   const [gameId, setGameId] = useState(readHash());
+  const gameIdRef = useRef(gameId);
+  gameIdRef.current = gameId;
 
   useEffect(() => {
-    const onHash = () => setGameId(readHash());
+    // 게임 중 뒤로 가기 등으로 주소가 바뀌면 새로 고침합니다.
+    // 원펀맨·얼티밋 배틀은 화면을 벗어나도 배경음악을 끄지 않기 때문입니다.
+    const onHash = () => {
+      if (GAMES.some(g => g.id === gameIdRef.current)) window.location.reload();
+      else setGameId(readHash());
+    };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
