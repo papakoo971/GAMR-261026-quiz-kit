@@ -1,0 +1,46 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run preview)",
+      "Bash(git init)",
+      "Bash(git status)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push)",
+      "Bash(git config user.name)",
+      "Bash(git config user.email)",
+      "Bash(gh auth status)",
+      "Bash(gh repo create *)",
+      "Bash(gh repo view *)",
+      "Bash(vercel whoami)",
+      "Bash(vercel --prod --yes)",
+      "Bash(curl *script.google.com*)",
+      "PowerShell(npm install)",
+      "PowerShell(npm run dev)",
+      "PowerShell(npm run build)",
+      "PowerShell(git init)",
+      "PowerShell(git status)",
+      "PowerShell(git add *)",
+      "PowerShell(git commit *)",
+      "PowerShell(git push)",
+      "PowerShell(gh auth status)",
+      "PowerShell(gh repo create *)",
+      "PowerShell(vercel whoami)",
+      "PowerShell(vercel --prod --yes)",
+      "Edit(src/config.js)",
+      "Bash(git remote -v)",
+      "PowerShell(git remote -v)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(gh repo delete *)",
+      "Bash(vercel remove *)",
+      "PowerShell(git push --force*)",
+      "PowerShell(gh repo delete *)",
+      "PowerShell(vercel remove *)"
+    ]
+  }
+}
