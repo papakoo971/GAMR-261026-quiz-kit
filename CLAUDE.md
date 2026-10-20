@@ -35,6 +35,8 @@
 4. **Vercel로 배포**
    - `vercel whoami`로 로그인을 확인합니다. 안 되어 있으면 `! vercel login`을 안내합니다.
    - `vercel --prod --yes`로 배포하고, 나온 주소(`https://….vercel.app`)를 알려 줍니다.
+   - 처음 배포할 때 `"reason": "missing_scope"`가 나오면, `choices`에 있는 **팀 ID(`team_…`)**로 `vercel link --yes --scope <팀 ID>`를 실행한 뒤 다시 `vercel --prod --yes`를 합니다. 계정 이름을 `--scope`에 넣으면 "You cannot set your Personal Account as the scope" 오류가 나므로 꼭 팀 ID를 씁니다.
+   - 연결 중 "Failed to link … Login Connection to your GitHub account" 메시지는 푸시할 때 자동 배포되는 기능이 안 켜졌다는 뜻일 뿐이라 배포에는 문제없습니다. 선생님에게 그렇게 설명하고 넘어갑니다.
 5. **수정하고 다시 배포** — 제목·색 등 바꾸고 싶은 것을 물어보고, 수정 → 커밋·푸시 → `vercel --prod --yes`.
 
 ## 지켜야 할 것
